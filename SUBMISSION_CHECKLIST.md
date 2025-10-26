@@ -43,24 +43,8 @@ BannaAI-terraform-blueprint/
 ├── tests/               # Terratest automation
 ├── .github/workflows/   # CI/CD pipeline
 ├── README.md           # Complete documentation
-├── LOOM_SCRIPT.md      # Video presentation guide
 └── SUBMISSION_CHECKLIST.md  # This file
 ```
-
-## 🎥 **Loom Video Content**
-- Repository overview and structure
-- Multi-environment demonstration
-- Multi-cloud provider abstraction
-- Terratest automation showcase
-- CI/CD pipeline walkthrough
-- Quick deployment demo
-
-## 📧 **Submission Details**
-- **Email**: contact@bannaai.com
-- **Subject**: BannaAI Terraform Blueprint Submission - [Your Name]
-- **Attachments**: 
-  - Repository link (GitHub/GitLab)
-  - Loom video link (1-2 minutes)
 
 ## 🔍 **Final Validation**
 - [x] All Terraform files formatted (`terraform fmt`)

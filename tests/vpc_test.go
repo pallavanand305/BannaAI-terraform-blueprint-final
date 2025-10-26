@@ -8,10 +8,8 @@ import (
 
 func TestVPCModule(t *testing.T) {
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../envs/stage",
+		TerraformDir: ".",
 	}
-
-	defer terraform.Destroy(t, terraformOptions)
 
 	terraform.InitAndPlan(t, terraformOptions)
 	

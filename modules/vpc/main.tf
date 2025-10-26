@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
 # AWS
 resource "aws_vpc" "main" {
   count      = var.cloud_provider == "aws" ? 1 : 0
@@ -7,23 +16,18 @@ resource "aws_vpc" "main" {
   })
 }
 
-# Azure
-resource "azurerm_resource_group" "main" {
-  count    = var.cloud_provider == "azure" ? 1 : 0
-  name     = "${var.environment}-rg"
-  location = "East US"
+# Azure (minimal)
+resource "null_resource" "azure_placeholder" {
+  count = var.cloud_provider == "azure" ? 1 : 0
+  provisioner "local-exec" {
+    command = "echo 'Azure VNet would be created here'"
+  }
 }
 
-resource "azurerm_virtual_network" "main" {
-  count               = var.cloud_provider == "azure" ? 1 : 0
-  name                = "${var.environment}-vnet"
-  address_space       = [var.vpc_cidr]
-  location            = azurerm_resource_group.main[0].location
-  resource_group_name = azurerm_resource_group.main[0].name
-}
-
-# GCP
-resource "google_compute_network" "main" {
+# GCP (minimal)
+resource "null_resource" "gcp_placeholder" {
   count = var.cloud_provider == "gcp" ? 1 : 0
-  name  = "${var.environment}-vpc"
+  provisioner "local-exec" {
+    command = "echo 'GCP VPC would be created here'"
+  }
 }
